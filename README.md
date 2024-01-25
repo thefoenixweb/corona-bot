@@ -22,17 +22,21 @@ Step 2: Download app to local folder then run "python app.py" in directory using
 
 Step 3: Open a seperate terminal and run the following code in that same directory: "nodemon --watch "app.py" --exec "lt --subdomain --port 5000" --delay 2" Note: name the subdomain whatever name you can come up with. The terminal will give you a url, copy it.
 
-Optional: Create your own MongoDB database and cluster and create your own users and orders databases. Then add your connection string to the app.py file. image
+Optional: Create your own MongoDB database and cluster and create your own users and orders databases. Then add your connection string to the app.py file. 
+![image](https://github.com/thefoenixweb/corona-bot/assets/71729650/f6bac6c6-df46-4e24-9c8f-8dd31bef48cd)
+
 
 Note: Make sure to put your password in your link there will be a space for it like this: ""
 
 Step 4: Create a Twilio account(its free), go to your console, on the left-panel, you will see a two headings: "Develop" and "Monitor", click on develop then you will see a tab that says "messaging", click on it and you will get a dropdown-list. Click on the option that says "Try it Out", then click on "Send a whatsapp message".
 
-image
+![image](https://github.com/thefoenixweb/corona-bot/assets/71729650/044e697e-f8ba-45dc-bc51-b6cfa6cec2d1)
+
 
 You will see two titles: Sandbox and Sandox Settings, click on the settings. You will see a space to paste a url in, above that space the header will say "When a message comes in". Paste your local subdomain url in that space. Next to that space there is an option to choose between a GET method or a POST method, choose POST. Then click save below
 
-image
+![image](https://github.com/thefoenixweb/corona-bot/assets/71729650/17285461-3ade-4ff5-9155-0abb37cf44fb)
+
 
 Step 5:
 
