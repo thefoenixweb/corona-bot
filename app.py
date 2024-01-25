@@ -11,10 +11,10 @@ cluster = MongoClient("mongodb+srv://john:Father@cluster0.b1lrdrw.mongodb.net/?r
 db = cluster["covid"]
 users = db["users"]
 
-appbot = Flask(__name__)
+app = Flask(__name__)
 
 
-@appbot.route("/", methods=["get", "post"])
+@app.route("/", methods=["get", "post"])
 def reply():
     num = request.form.get("From")
     num = num.replace("whatsapp:", "")
@@ -42,4 +42,4 @@ def reply():
 
 
 if (__name__ == "__main__"):
-    appbot.run(port=5000)
+    app.run(port=5000)
