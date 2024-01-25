@@ -3,8 +3,6 @@
 from pymongo import MongoClient
 from flask import Flask, request
 from twilio.twiml.messaging_response import MessagingResponse
-import datetime
-import urllib
 from corona1 import get_data
 
 
@@ -16,7 +14,7 @@ users = db["users"]
 appbot = Flask(__name__)
 
 
-@appbot.route("/sms", methods=["get", "post"])
+@appbot.route("/", methods=["get", "post"])
 def reply():
     num = request.form.get("From")
     num = num.replace("whatsapp:", "")
@@ -35,13 +33,13 @@ def reply():
         return (str(msg))
     else:
         if (status == "first"):
-            data = get_data(msg_text)
+            data = get_data(msg_text, num)
             msg = MessagingResponse()
             resp = msg.message(data)
             users.delete_one({"NUMBER": num})
             return (str(msg))
 
 
-# endregion
+
 if (__name__ == "__main__"):
     appbot.run(port=5000)
